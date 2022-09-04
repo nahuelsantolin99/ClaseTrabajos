@@ -1,0 +1,63 @@
+/*
+ ============================================================================
+ Name        : DesafioMenu.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char opcion;
+	int flag1 = 1;
+	int flag2 = 1;
+
+	do
+	{
+		printf("Bienvenido al menu de opciones!\n");
+		printf("Ingrese la opcion que desea:");
+
+		do
+		{
+			printf("'a' - Iniciar");
+			printf("'b' - Procesar");
+			printf("'c' - Finalizar");
+			printf("'d' - Salir");
+		}while(opcion != 'a' && opcion != 'b' && opcion != 'c' && opcion != 'd');
+
+		switch(opcion)
+		{
+			case 'a':
+				printf("Iniciando");
+				flag1 = 0;
+			break;
+			case 'b':
+				if(flag1 == 1)
+				{
+					printf("Debe iniciar para procesar");
+				}
+				else
+				{
+					"Procesando";
+					flag2 = 0;
+				}
+			break;
+			case 'c':
+				if(flag1 == 1)
+				{
+					""
+				}
+			break;
+			case 'd':
+			break;
+		}
+	}while(opcion != 'd');
+	return EXIT_SUCCESS;
+}

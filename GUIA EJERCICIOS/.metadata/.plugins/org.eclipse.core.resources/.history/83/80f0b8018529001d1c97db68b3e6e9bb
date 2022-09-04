@@ -1,0 +1,41 @@
+/*
+ ============================================================================
+ Name        : Tema3ej7.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int numero1;
+	int numero2;
+	char operacion;
+
+	do
+	{
+		printf("Ingrese numero uno: ");
+		scanf("%d", &numero1);
+	}while(numero1 < 10 || numero1 > 100);
+
+	do
+	{
+		printf("Ingrese numero dos: ");
+		scanf("%d", &numero2);
+	}while(numero2 < 10 || numero2 > 100);
+
+	do
+	{
+		printf("Ingrese 's' para sumar, 'r' para restar: ");
+		scanf("%c", &operacion);
+	}while(operacion != 's' && operacion != 'r');
+
+	return EXIT_SUCCESS;
+}

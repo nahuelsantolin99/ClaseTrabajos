@@ -1,0 +1,51 @@
+/*
+ * biblioSab.c
+ *
+ *  Created on: 3 sep. 2022
+ *      Author: Nahuel
+ */
+
+
+
+int solicitarNumero(void)
+{
+	int retornoEntero;
+
+	printf("Ingrese un numero: ");
+	scanf("%d", &retornoEntero);
+
+	return retornoEntero;
+}
+
+float retornarPromedio(int numeroUno, int numeroDos)
+{
+	float retornoPromedio;
+
+	retornoPromedio = (float)(numeroUno + numeroDos) / 2;
+
+	return retornoPromedio;
+}
+
+int retornarAnalisis(int numeroA)
+{
+	int retorno;
+
+	if(numeroA > 0)
+	{
+		retorno = 1;
+	}
+	else
+	{
+		if(numeroA < 0)
+		{
+			retorno = -1;
+		}
+		else
+		{
+			retorno = 0;
+		}
+	}
+
+	return retorno;
+}
+

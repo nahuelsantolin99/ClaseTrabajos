@@ -1,0 +1,7 @@
+08:42:37 **** Rebuild of configuration Debug for project clase1ytbis ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase1ytbis.o" "..\\src\\clase1ytbis.c" 
+gcc -o clase1ytbis.exe "src\\clase1ytbis.o" 
+
+08:42:38 Build Finished. 0 errors, 0 warnings. (took 321ms)
+

@@ -1,0 +1,33 @@
+/*
+ ============================================================================
+ Name        : Tema3ej1.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void mostrarEntero(int numeroEntero);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int numero;
+
+	printf("Ingrese un numero: ");
+	scanf("%d", &numero);
+
+	mostrarEntero(numero);
+
+	return EXIT_SUCCESS;
+}
+
+void mostrarEntero(int numeroEntero)
+{
+	printf("Ingreso %d", numeroEntero);
+}

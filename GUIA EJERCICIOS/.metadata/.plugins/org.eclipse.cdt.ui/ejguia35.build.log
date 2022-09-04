@@ -1,0 +1,10 @@
+19:29:06 **** Incremental Build of configuration Debug for project ejguia35 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejguia35.o" "..\\src\\ejguia35.c" 
+..\src\ejguia35.c: In function `main':
+..\src\ejguia35.c:44: error: too many arguments to function `sumar2'
+..\src\ejguia35.c:49: error: void value not ignored as it ought to be
+..\src\ejguia35.c:53: error: void value not ignored as it ought to be
+
+19:29:07 Build Failed. 3 errors, 0 warnings. (took 331ms)
+

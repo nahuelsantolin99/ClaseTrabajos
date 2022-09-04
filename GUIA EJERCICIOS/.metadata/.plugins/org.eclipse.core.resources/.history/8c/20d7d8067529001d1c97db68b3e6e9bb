@@ -1,0 +1,79 @@
+/*
+ ============================================================================
+ Name        : Tema3ej5.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int restar1(int num1, int num2);
+int restar2(void);
+void restar3(int numeroA, int numeroB);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int numeroUno;
+	int numeroDos;
+	int resultado;
+
+	printf("Ingrese numero uno: ");
+	scanf("%d", &numeroUno);
+
+	printf("Ingreso numero dos: ");
+	scanf("%d", &numeroDos);
+
+	resultado = restar1(numeroUno, numeroDos);
+
+	printf("El resultado de la resta1 es: %d\n", resultado);
+
+	resultado = restar2();
+
+	printf("El resultado de la resta2 es: %d", resultado);
+
+	resta3(numeroUno, numeroDos);
+
+	return EXIT_SUCCESS;
+}
+
+int restar1(int num1, int num2)
+{
+	int resta;
+
+	resta = num1 - num2;
+
+	return resta;
+}
+
+int restar2(void)
+{
+	int numA;
+	int numB;
+	int resta;
+
+	printf("Ingrese num A: ");
+	scanf("%d", &numA);
+
+	printf("Ingrese num B: ");
+	scanf("%d", &numB);
+
+	resta = numA - numB;
+
+	return resta;
+}
+
+void restar3(int numeroA, int numeroB)
+{
+	int resta;
+
+	resta = numeroA - numeroB;
+
+	printf("El resultado de la resta3 es: %d", resta);
+}
+

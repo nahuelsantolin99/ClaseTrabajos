@@ -1,0 +1,42 @@
+/*
+ ============================================================================
+ Name        : Clase2Sab.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "biblioSab.h"
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int numero;
+	int acumuladorPositivos = 0;
+	int contadorPositivos = 0;
+	float promedioPositivos;
+	int i;
+
+	for(i = 0; i < 10; i++)
+	{
+		numero = solicitarNumero();
+
+		if(numero > 0)
+		{
+			acumuladorPositivos = acumuladorPositivos + numero;
+			contadorPositivos++;
+		}
+	}
+
+	promedioPositivos = promediarAcumulado(acumuladorPositivos, contadorPositivos);
+
+	printf("El promedio de los positivos es: %.2f", promedioPositivos);
+
+	return EXIT_SUCCESS;
+}
+

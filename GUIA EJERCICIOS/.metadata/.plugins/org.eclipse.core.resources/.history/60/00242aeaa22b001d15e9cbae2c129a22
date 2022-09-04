@@ -1,0 +1,44 @@
+/*
+ ============================================================================
+ Name        : Clase2Sab.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int numero1;
+	int numero2;
+	int entero;
+	float promedio;
+	int retornoAnalisis;
+
+	printf("Ingrese numero1: ");
+	scanf("%d", &numero1);
+
+	printf("Ingrese numero2: ");
+	scanf("%d", &numero2);
+
+	entero = solicitarNumero();
+
+	printf("El numero ingresado es: %d\n", entero);
+
+	promedio = retornarPromedio(numero1, numero2);
+
+	printf("El promedio de los dos enteros es: %.2f\n", promedio);
+
+	retornoAnalisis = retornarAnalisis(numero1);
+
+	printf("El resultado del analisis es: %d\n", retornoAnalisis);
+
+	return EXIT_SUCCESS;
+}
+

@@ -1,0 +1,89 @@
+/*
+ ============================================================================
+ Name        : Clase2Sab.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int solicitarNumero(void);
+float retornarPromedio(int numeroUno, int numeroDos);
+int retornarAnalisis(int numeroA);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int numero1;
+	int numero2;
+	int entero;
+	float promedio;
+	int retornoAnalisis;
+
+	printf("Ingrese numero1: ");
+	scanf("%d", &numero1);
+
+	printf("Ingrese numero2: ");
+	scanf("%d", &numero2);
+
+	entero = solicitarNumero();
+
+	printf("El numero ingresado es: %d", entero);
+
+	promedio = retornarPromedio(numero1, numero2);
+
+	printf("El promedio de los dos enteros es: %d", promedio);
+
+	retornoAnalisis = retornarAnalisis(numero1);
+
+	printf("El resultado del analisis es: %d", retornoAnalisis);
+
+	return EXIT_SUCCESS;
+}
+
+int solicitarNumero(void)
+{
+	int retornoEntero;
+
+	printf("Ingrese un numero: ");
+	scanf("%d", &retornoEntero);
+
+	return retornoEntero;
+}
+
+float retornarPromedio(int numeroUno, int numeroDos)
+{
+	float retornoPromedio;
+
+	retornoPromedio = (float)(numeroUno + numeroDos) / 2;
+
+	return retornoPromedio;
+}
+
+int retornarAnalisis(int numeroA)
+{
+	int retorno;
+
+	if(numeroA > 0)
+	{
+		retorno = 1;
+	}
+	else
+	{
+		if(numeroA < 0)
+		{
+			retorno = -1;
+		}
+		else
+		{
+			retorno = 0;
+		}
+	}
+
+	return retorno;
+}

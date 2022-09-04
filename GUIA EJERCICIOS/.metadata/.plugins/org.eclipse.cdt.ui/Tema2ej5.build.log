@@ -1,0 +1,7 @@
+16:39:49 **** Rebuild of configuration Debug for project Tema2ej5 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tema2ej5.o" "..\\src\\Tema2ej5.c" 
+gcc -o Tema2ej5.exe "src\\Tema2ej5.o" 
+
+16:39:49 Build Finished. 0 errors, 0 warnings. (took 391ms)
+

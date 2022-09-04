@@ -1,0 +1,101 @@
+/*
+ ============================================================================
+ Name        : meenu.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char opcion;
+	char respuesta;
+	int flagInicio = 1;
+	int flagProceso = 1;
+
+	printf("Bienvenido al menu de opciones!\n");
+	printf("Ingrese la opcion que desea...\n");
+
+
+	do
+	{
+		do
+		{
+			printf("'a' - Iniciar\n");
+			printf("'b' - Procesar\n");
+			printf("'c' - Finalizar\n");
+			printf("'d' - Salir\n");
+			scanf("%c", &opcion);
+			fflush(stdin);
+		}while(opcion != 'a' && opcion != 'b' && opcion != 'c' && opcion != 'd');
+
+		switch(opcion)
+		{
+			case 'a':
+				printf("Iniciando\n");
+				flagInicio = 0;
+			break;
+			case 'b':
+				if(flagInicio == 1)
+				{
+					printf("Debe iniciar para procesar\n");
+				}
+				else
+				{
+					printf("Procesando\n");
+					flagProceso = 0;
+				}
+			break;
+			case 'c':
+				if(flagInicio == 1)
+				{
+					printf("Debe iniciar antes de finalizar\n");
+				}
+				else
+				{
+					if(flagProceso == 1)
+					{
+						printf("Debe procesar antes de finalizar\n");
+					}
+					else
+					{
+						printf("Finalizando\n");
+						flagInicio = 1;
+						flagProceso = 1;
+					}
+				}
+			break;
+			case 'd':
+				do
+				{
+					printf("Esta seguro que desea salir? 's'/'n'\n");
+					scanf("%c", &respuesta);
+					fflush(stdin);
+				}while(respuesta != 's' && respuesta != 'n');
+			break;
+		}
+	}while(respuesta != 's');
+
+	return EXIT_SUCCESS;
+}
+
+//SI QUISIESE HACER LAS OPCIONES CON UNA FUNCION:
+/*
+int Menu(void)
+{
+	int opcion;
+	printf("-1 iniciar \n");
+	printf("-2 Procesar \n");
+	printf("-3 Finalizar \n");
+	printf("-4 Salir \n");
+	scanf("%d",&opcion);
+	return opcion;
+}
+*/

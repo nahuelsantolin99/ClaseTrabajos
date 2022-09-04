@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tema1ej3/src/ESej3.c&apos; to &apos;Tema1ej3.c&apos;" description="Rename resource &apos;ESej3.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/ESej3.c" name="Tema1ej3.c" stamp="1661454956184" updateReferences="true"/>
+</session>
