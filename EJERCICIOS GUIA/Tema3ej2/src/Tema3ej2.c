@@ -10,8 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-float retornarFlotante(void);
+#include "utn.h"
 
 int main(void)
 {
@@ -26,13 +25,6 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
-float retornarFlotante(void)
-{
-	float flotante;
 
-	printf("Ingrese un flotante: ");
-	scanf("%f", &flotante);
 
-	return flotante;
-}
 

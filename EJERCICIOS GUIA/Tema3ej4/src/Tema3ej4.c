@@ -10,9 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-void mostrarEntero(int numeroEntero);
-float retornarFlotante(void);
+#include "utn.h"
 
 int main(void)
 {
@@ -31,29 +29,4 @@ int main(void)
 	printf("El numero flotante ingresado es: %.2f", flotanteRetornado);
 
 	return EXIT_SUCCESS;
-}
-
-void mostrarEntero(int numeroEntero)
-{
-	if(numeroEntero > 0 && numeroEntero < 50)
-	{
-		printf("Ingreso el numero entero %d\n", numeroEntero);
-	}
-	else
-	{
-		printf("Ingreso un numero fuera de rango\n");
-	}
-}
-
-float retornarFlotante(void)
-{
-	float flotante;
-
-	do
-	{
-		printf("Ingrese un flotante: ");
-		scanf("%f", &flotante);
-	}while(flotante < 0 || flotante > 50);
-
-	return flotante;
 }

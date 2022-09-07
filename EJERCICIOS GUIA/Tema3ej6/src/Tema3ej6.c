@@ -10,10 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-#define DESC 5
-
-float realizarDescuento(int num);
+#include "utn.h"
 
 int main(void)
 {
@@ -28,20 +25,9 @@ int main(void)
 		scanf("%d", &numero1);
 	}while(numero1 < 10 || numero1 > 100);
 
-	resultado = realizarDescuento(numero1);
+	resultado = realizarDiezPorCientoDescuento(numero1);
 
 	printf("El resultado con el descuento es: %.2f", resultado);
 
 	return EXIT_SUCCESS;
-}
-
-float realizarDescuento(int num)
-{
-	float descuentoCalculado;
-	float valorConDescuento;
-
-	descuentoCalculado = ((float)num * DESC) / 100;
-	valorConDescuento = num - descuentoCalculado;
-
-	return valorConDescuento;
 }

@@ -10,8 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-void mostrarEntero(int numeroEntero);
+#include "utn.h"
 
 int main(void)
 {
@@ -27,7 +26,3 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
-void mostrarEntero(int numeroEntero)
-{
-	printf("Ingreso %d", numeroEntero);
-}

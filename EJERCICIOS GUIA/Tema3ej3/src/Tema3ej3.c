@@ -10,8 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int determinarParidad(int num);
+#include "utn.h"
 
 int main(void)
 {
@@ -28,20 +27,4 @@ int main(void)
 	printf("El resultado es %d", resultado);
 
 	return EXIT_SUCCESS;
-}
-
-int determinarParidad(int num)
-{
-	int retorno;
-
-	if(num % 2 == 0)
-	{
-		retorno = 1;
-	}
-	else
-	{
-		retorno = 0;
-	}
-
-	return retorno;
 }

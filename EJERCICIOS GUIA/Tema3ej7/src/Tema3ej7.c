@@ -11,8 +11,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int realizarOperacion(int num1, int num2, char operador);
-
 int main(void)
 {
 	setbuf(stdout,NULL);
@@ -49,18 +47,3 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
-int realizarOperacion(int num1, int num2, char operador)
-{
-	int retorno;
-
-	if(operador == 's')
-	{
-		retorno = num1 + num2;
-	}
-	else
-	{
-		retorno = num1 - num2;
-	}
-
-	return retorno;
-}

@@ -10,8 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-int sumarConPuntero(int numero1, int numero2, int* resultado);
+#include "utn.h"
 
 int main(void)
 {
@@ -38,14 +37,5 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 
-int sumarConPuntero(int numero1, int numero2, int* resultado)
-{
-	int retorno = -1;
 
-	*resultado = numero1 + numero2;
-
-	retorno = 0;
-
-	return retorno;
-}
 
