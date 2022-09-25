@@ -1,0 +1,86 @@
+/*
+ ============================================================================
+ Name        : Tema7ej2b.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "utn.h"
+
+int getNumeroDeTelefono(char* cadena, int longitud);
+int esNumeroDeTelefono(char* cadena);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char telefono[15];
+
+	if(getNumeroDeTelefono(telefono, 15) == 0)
+	{
+		printf("Numero de telefono: %s", telefono);
+	}
+	else
+	{
+		printf("No es un numero de telefono");
+	}
+
+	return EXIT_SUCCESS;
+}
+
+int getNumeroDeTelefono(char* cadena, int longitud)
+{
+	int retorno = -1;
+	char bufferString[15];
+
+	printf("Ingrese un numero de telefono: ");
+	myGets(bufferString, sizeof(bufferString));
+
+	if(cadena != NULL && longitud > 0 && (strlen(bufferString) < longitud) && (esNumeroDeTelefono(bufferString) == 1))
+	{
+		strcpy(cadena, bufferString);
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int esNumeroDeTelefono(char* cadena)
+{
+	int retorno;
+	int i;
+	int contadorGuiones = 0;
+
+	for(i = 0; i < strlen(cadena); i++)
+	{
+		if((cadena[i] != ' ') && (cadena[i] != '-') && (cadena[i] < '0' && cadena[i] > '9'))
+		{
+			retorno = 0;
+		}
+		else
+		{
+			retorno = 1;
+			if(cadena[i] == '-')
+			{
+				contadorGuiones++;
+				if(contadorGuiones == 1 && (cadena[i] >= 0 || cadena[i] <= 9))
+				{
+					retorno = 1;
+				}
+				else
+				{
+					retorno = 0;
+				}
+			}
+		}
+	}
+
+	return retorno;
+}

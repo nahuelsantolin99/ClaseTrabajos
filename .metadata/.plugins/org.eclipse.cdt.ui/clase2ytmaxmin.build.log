@@ -1,0 +1,11 @@
+19:26:15 **** Incremental Build of configuration Debug for project clase2ytmaxmin ****
+Info: Internal Builder is used for build
+g++ -o clase2ytmaxmin.exe "src\\clase2yt.o" "src\\clase2yt.o" 
+Cannot run program "g++": Launching failed
+
+Error: Program "g++" not found in PATH
+PATH=[C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\MinGW\msys\1.0\usr\bin;C:/Users/Nahuel/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin/server;C:/Users/Nahuel/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208/jre/bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Git\cmd;C:\Users\Nahuel\AppData\Local\Microsoft\WindowsApps;;C:\Users\Nahuel\eclipse\cpp-2022-033\eclipse]
+
+
+19:26:15 Build Finished. 0 errors, 0 warnings. (took 67ms)
+

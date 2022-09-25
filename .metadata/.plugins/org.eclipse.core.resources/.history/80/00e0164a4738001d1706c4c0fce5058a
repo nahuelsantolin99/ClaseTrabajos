@@ -1,0 +1,63 @@
+/*
+ ============================================================================
+Realizar el prototipo, el desarrollo y la llamada de una función que reciba por parámetro dos números enteros y
+retorne por referencia el mayor y por valor el menor.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "utn.h"
+
+int retornarMayorYMenor(int num1, int num2, int* pMayor);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	int numeroA;
+	int numeroB;
+	int mayor;
+	int retornoMenor;
+
+	utn_getNumero(&numeroA, "Ingrese numeroA:", "Error", -100, 100, 2);
+	utn_getNumero(&numeroB, "Ingrese numeroB:", "Error", -100, 100, 2);
+
+	retornoMenor = retornarMayorYMenor(numeroA, numeroB, &mayor);
+
+	printf("El menor es %d\n", retornoMenor);
+	printf("El mayor es %d\n", mayor);
+
+	return EXIT_SUCCESS;
+}
+
+int retornarMayorYMenor(int num1, int num2, int* pMayor)
+{
+	int minimo;
+
+	if(num1 > num2)
+	{
+		*pMayor = num1;
+	}
+	else
+	{
+		if(num2 > num1)
+		{
+			*pMayor = num2;
+		}
+	}
+
+	if(num1 < num2)
+	{
+		minimo = num1;
+	}
+	else
+	{
+		if(num2 < num1)
+		{
+			minimo = num2;
+		}
+	}
+
+	return minimo;
+}

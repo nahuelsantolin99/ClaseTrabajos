@@ -1,0 +1,7 @@
+18:41:57 **** Incremental Build of configuration Debug for project Tema7ej1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tema7ej1.exe "src\\Tema7ej1.o" "src\\utn.o" 
+
+18:41:57 Build Finished. 0 errors, 0 warnings. (took 294ms)
+

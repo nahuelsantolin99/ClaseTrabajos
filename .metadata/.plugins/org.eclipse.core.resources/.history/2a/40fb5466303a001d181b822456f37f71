@@ -1,0 +1,51 @@
+/*
+ ============================================================================
+ Name        : Tema7ej3.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "utn.h"
+
+int esLetraConEspacio(char *pResultado);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char prueba[11] = {'H', 'O', 'L','A',' ','D', 'A', 'M', 'A', 'S', '\0'};
+	int retorno;
+
+	retorno = esLetraConEspacio(prueba);
+	printf("%d", retorno);
+
+	return EXIT_SUCCESS;
+}
+
+int esLetraConEspacio(char *pResultado)
+{
+	int retorno;
+	int i;
+
+	for(i = 0; i < strlen(pResultado); i++)
+	{
+		if((isalpha(pResultado[i]) == 1) || (*pResultado[i] == ' '))
+		{
+			retorno = 1;
+		}
+		else
+		{
+			retorno = 0;
+		}
+	}
+
+	return retorno;
+}
+

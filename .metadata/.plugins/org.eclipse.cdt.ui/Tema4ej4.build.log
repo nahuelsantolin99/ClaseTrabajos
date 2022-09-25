@@ -1,0 +1,8 @@
+20:37:48 **** Rebuild of configuration Debug for project Tema4ej4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tema4ej4.o" "..\\src\\Tema4ej4.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\utn.o" "..\\src\\utn.c" 
+gcc -o Tema4ej4.exe "src\\Tema4ej4.o" "src\\utn.o" 
+
+20:37:48 Build Finished. 0 errors, 0 warnings. (took 500ms)
+

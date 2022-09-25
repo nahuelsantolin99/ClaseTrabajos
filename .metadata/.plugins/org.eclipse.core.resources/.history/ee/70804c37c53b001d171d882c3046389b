@@ -1,0 +1,91 @@
+/*
+ ============================================================================
+ Name        : arrayParalelo.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "utn.h"
+
+#define TAM 2
+
+int cargarMatriz(char matriz[][15], int longitud);
+//int getsValidadoMatriz(char matriz[][15], int longitud);
+void mostrarMatriz(char matriz[][15], int longitud);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char nombres[TAM][15];
+
+	cargarMatriz(nombres, TAM);
+
+	mostrarMatriz(nombres, TAM);
+
+	return EXIT_SUCCESS;
+}
+
+int cargarMatriz(char matriz[][15], int longitud)
+{
+	int retorno = -1;
+	int i;
+	char auxMatriz[50];
+
+	if(matriz != NULL)
+	{
+		for(i = 0; i < longitud; i++)
+		{
+			printf("Ingrese nombre: ");
+			getsValidado(auxMatriz, sizeof(auxMatriz));
+			if(strlen(auxMatriz) < sizeof(matriz))
+			{
+				strcpy(matriz[i], auxMatriz);
+			}
+		}
+
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+void mostrarMatriz(char matriz[][15], int longitud)
+{
+	int i;
+
+	for(i = 0; i < longitud; i++)
+	{
+		printf("Su nombre es: %s\n", matriz[i]);
+	}
+}
+
+/*
+int getsValidadoMatriz(char matriz[][15], int longitud)
+{
+	int retorno = -1;
+	char auxCad[4096];
+
+	printf("Ingrese un nombre: ");
+	fflush(stdin);
+	gets(auxCad);
+
+	while(strlen(auxCad) >= longitud)
+	{
+		printf("Nombre demasiado largo. Reingrese nombre: ");
+		fflush(stdin);
+		gets(auxCad);
+	}
+
+	strcpy(matriz, auxCad);
+
+	return retorno;
+}
+*/
+

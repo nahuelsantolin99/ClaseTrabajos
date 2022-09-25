@@ -1,0 +1,4 @@
+19:54:06 **** Incremental Build of configuration Debug for project Tema8ej1 ****
+Info: Internal Builder is used for build
+gcc -o Tema8ej1.exe "src\\Tema8ej.o" "src\\funMatrizABM.o" "src\\utn.o" 
+Info: Nothing to build for Tema8ej1

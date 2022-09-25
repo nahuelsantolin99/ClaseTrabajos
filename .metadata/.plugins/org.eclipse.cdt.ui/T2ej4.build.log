@@ -1,0 +1,7 @@
+19:53:24 **** Incremental Build of configuration Debug for project T2ej4 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\T2ej4.o" "..\\src\\T2ej4.c" 
+gcc -o T2ej4.exe "src\\T2ej4.o" 
+
+19:53:24 Build Finished. 0 errors, 0 warnings. (took 312ms)
+

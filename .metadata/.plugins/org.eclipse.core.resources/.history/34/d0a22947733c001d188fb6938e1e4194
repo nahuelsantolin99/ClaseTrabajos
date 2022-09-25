@@ -1,0 +1,67 @@
+/*
+ ============================================================================
+ Name        : back.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "utn.h"
+
+#define TAM 3
+#define LEN 5
+
+int cargarMatriz(char codigo[][5], int cantidadCarga);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char codigo[TAM][LEN];
+	int i;
+
+	cargarMatriz(codigo, TAM, LEN);
+
+	for(i = 0; i < TAM; i++)
+	{
+		printf("Codigo alfanumerico: %s", codigo[i]);
+	}
+
+	return EXIT_SUCCESS;
+}
+
+int cargarMatriz(char codigo[][5], int cantidadCarga, int longitud)
+{
+	int retorno = -1;
+	int i;
+	char bufferCodigo[5];
+
+	if(codigo != NULL && cantidadCarga > 0)
+	{
+		for(i = 0; i < cantidadCarga; i++)
+		{
+			printf("Ingrese codigo alfanumerico: ");
+			fflush(stdin);
+			gets(bufferCodigo);
+			while(strlen(bufferCodigo) >= longitud)
+			{
+				printf("Codigo muy largo. Reingrese: ");
+				fflush(stdin);
+				gets(bufferCodigo);
+			}
+			if(esAlfanumerico(bufferCodigo))
+			{
+				strcpy(codigo[i], bufferCodigo);
+				retorno = 0;
+			}
+		}
+	}
+
+	return retorno;
+}

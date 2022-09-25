@@ -1,0 +1,63 @@
+/*
+ * utn.h
+ *
+ *  Created on: 6 sep. 2022
+ *      Author: Nahuel
+ */
+
+int esNumerica(char* cadena, int limite);
+int esSoloLetra(char *pResultado);
+int esLetraConEspacio(char *pResultado);
+int getNumeroDeTelefono(char* cadena, int longitud);
+int esNumeroDeTelefono(char* cadena);
+int getAlfanumerico(char* cadena, int longitud);
+int esAlfanumerico(char* cadena);
+int myGets(char* cadena, int longitud);
+void formarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto);
+int ordenarArrayDecrecienteNegativos(int array[], int cantidadElementos);
+int imprimirListaEnterosNegativos(int array[], int cantidadElementos);
+int ordenarArrayCrecientePositivos(int array[], int cantidadElementos);
+int imprimirListaEnterosPositivos(int array[], int cantidadElementos);
+int calcularMayorNegativos(int array[], int cantidadElementos, int* pMayorNegativos);
+int promediarPositivosArray(int array[], int cantidadElementos, float* pPromedioPositivos);
+int inicializarArray(int array[], int cantidadElementos);
+int imprimirPosicionesImpares(int array[], int cantidadElementos);
+int listarMayoresAQuince(int array[], int cantidadElementos);
+int determinarMayorPares(int array[], int cantidadElementos, int flagPares, int* pMayorPares);
+int sumarImpares(int array[], int cantidadElementos, int acumuladorImpares, int* pAcumuladorImpares);
+int contarNegativos(int array[], int cantidadElementos, int contadorNegativos, int* pContadorNegativos);
+int calcularMaximo(int array[], int cantidadElementos, int* pMaximo);
+void mostrarEntero(int numeroEntero);
+float retornarFlotante(void);
+int determinarParidad(int num);
+void mostrarEnteroLimite(int numeroEntero);
+float retornarFlotanteLimite(void);
+float realizarDescuento(int num);
+int realizarOperacion(int num1, int num2, char operador);
+int sumarConPuntero(int numero1, int numero2, int* resultado);
+int pedirNumero(int* pNumero);
+int dividirEnteros(int operador1, int operador2, float* pResultado);
+int utn_getNumero(int* pResultado, char* mensaje, char* mensajeError, int minimo, int maximo, int reintentos);
+int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, float minimo, float maximo, int reintentos);
+int utn_getCaracter(char* pResultado, char* mensaje, char* mensajeError, char minimo, char maximo, int reintentos);
+int seguirCarga(char* pRespuesta);
+int loguear(int* pFlagLoguearse);
+int comprar(int flagLoguearse, int* pFlagCompra);
+int mostrarCompras(int flagLoguearse, int flagCompra);
+int vender(int subOpcion, int flagLoguearse, int flagPrimerVenta, int* pFlagPrimerVenta, int flagCompra);
+int cargarArrayEnteros(int array[], int cantidadElementos);
+int contarPositivosYNegativos(int array[], int cantidadElementos, int contadorPositivos, int contadorNegativos, int* pContadorPositivos, int* pContadorNegativos);
+int sumarPares(int array[], int cantidadElementos, int acumuladorPares, int* pAcumuladorPares);
+int sumarEnteros(int array[], int cantidadElementos, int acumuladorEnteros, int* pAcumuladorEnteros);
+int determinarMayorImpares(int array[], int cantidadElementos, int flagImpares, int* mayorImpares);
+int imprimirListaEnteros(int array[], int cantidadElementos);
+int imprimirPares(int array[], int cantidadElementos);
+int imprimirImpares(int array[], int cantidadElementos);
+float calcularYRetornarPromedio(int array[], int cantidadElementos);
+
+#ifndef UTN_H_
+#define UTN_H_
+
+
+
+#endif /* UTN_H_ */

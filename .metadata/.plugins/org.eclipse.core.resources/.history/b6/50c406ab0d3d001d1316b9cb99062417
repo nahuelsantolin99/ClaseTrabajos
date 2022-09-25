@@ -1,0 +1,112 @@
+/*
+ * funMatrizABM.c
+ *
+ *  Created on: 25 sep. 2022
+ *      Author: Nahuel
+ */
+
+int cargarProductos(char codigo[][5], char modelo[][11], int cantidadProductos[], float precio[], int cantidadCarga)
+{
+	int retorno = -1;
+	int i;
+	char bufferCodigo[5];
+	char bufferModelo[11];
+	int bufferProductos;
+	float bufferPrecios;
+
+	if(codigo != NULL && cantidadCarga > 0)
+	{
+		for(i = 0; i < cantidadCarga; i++)
+		{
+			do
+			{
+				//EL GETS ME VALIDA QUE NO SUPERE EL LIMITE DE ELEMENTOS
+				getsValidado("Ingrese alfanumerico: ", "Error. Reingrese alfanumerico", bufferCodigo, sizeof(bufferCodigo));
+			}while(esAlfanumerico(bufferCodigo) == 0);//VA A ITERAR SIEMPRE QUE NO SEA ALFANUMERICO
+
+			if(esAlfanumerico(bufferCodigo) == 1)
+			{
+				strcpy(codigo[i], bufferCodigo);
+			}
+
+			do
+			{
+				//EL GETS ME VALIDA QUE NO SUPERE EL LIMITE DE ELEMENTOS
+				getsValidado("Ingrese modelo: ", "Error. Reingrese modelo", bufferModelo, sizeof(bufferModelo));
+			}while(esSoloLetra(bufferModelo) == 0);//VA A ITERAR SIEMPRE QUE NO SEA SOLO LETRAS
+
+			if(esSoloLetra(bufferModelo) == 1)
+			{
+				strcpy(modelo[i], bufferModelo);
+			}
+
+			utn_getNumero(&bufferProductos, "Ingrese cantidad de productos: ", "Error", 0, 1000, 2);
+
+			cantidadProductos[i] = bufferProductos;
+
+			utn_getNumeroFlotante(&bufferPrecios, "Ingrese precio del producto: ", "Error", 0, 1000, 2);
+
+			precio[i] = bufferProductos;
+		}
+	}
+
+	return retorno;
+}
+
+int venderProductos(int cantidadProductos[])
+{
+	int retorno = -1;
+	int auxIndex;
+	char respuesta;
+
+	if(cantidadProductos != NULL)
+	{
+		do
+		{
+			preguntarIndex(&auxIndex);
+
+			cantidadProductos[auxIndex-1]--;
+
+			do
+			{
+				printf("Desea vender otro producto? s/n");
+				fflush(stdin);
+				scanf("%c", &respuesta);
+			}while(respuesta != 's' && respuesta != 'n');
+		}while(respuesta == 's');
+
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+int preguntarIndex(int* pAuxIndex)
+{
+	int retorno = -1;
+	int index;
+
+	if(pAuxIndex != NULL)
+	{
+		printf("\nIngrese el index que desea vender: ");
+		scanf("%d", &index);
+
+		*pAuxIndex = index;
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+void imprimirProductos(char codigo[][5], char modelo[][11], int cantidadProductos[], float precio[], int cantidadCarga)
+{
+	int i;
+
+	printf("\nINDEX  CODIGO  MODELO  CANTIDAD  PRECIO\n");
+
+	for(i = 0; i < cantidadCarga; i++)
+	{
+		printf("%d      %s      %s       %d      %.2f  \n", i + 1, codigo[i], modelo[i], cantidadProductos[i], precio[i]);
+	}
+}
+

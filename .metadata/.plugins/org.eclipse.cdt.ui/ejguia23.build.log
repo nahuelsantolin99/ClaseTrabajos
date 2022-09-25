@@ -1,0 +1,12 @@
+08:42:42 **** Rebuild of configuration Debug for project ejguia23 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejguia23.o" "..\\src\\ejguia23.c" 
+..\src\ejguia23.c: In function `main':
+..\src\ejguia23.c:35: error: syntax error before '}' token
+..\src\ejguia23.c:36: error: syntax error before '}' token
+..\src\ejguia23.c:20: warning: unused variable `edad'
+..\src\ejguia23.c:21: warning: unused variable `temperatura'
+..\src\ejguia23.c:22: warning: unused variable `genero'
+
+08:42:42 Build Failed. 2 errors, 3 warnings. (took 138ms)
+

@@ -1,0 +1,6 @@
+19:09:46 **** Incremental Build of configuration Debug for project xczz ****
+Info: Internal Builder is used for build
+gcc -o xczz.exe "src\\xczz.o" 
+
+19:09:46 Build Finished. 0 errors, 0 warnings. (took 159ms)
+

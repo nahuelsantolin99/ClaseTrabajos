@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Tema1ej2/src/akcnosda.c&apos; to &apos;Tema1ej2.c&apos;" description="Rename resource &apos;akcnosda.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/akcnosda.c" name="Tema1ej2.c" stamp="1661454720786" updateReferences="true"/>
+</session>

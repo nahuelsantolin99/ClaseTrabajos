@@ -1,0 +1,9 @@
+02:15:13 **** Incremental Build of configuration Debug for project T2ej5b ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\T2ej5b.o" "..\\src\\T2ej5b.c" 
+gcc -o T2ej5b.exe "src\\T2ej5b.o" 
+C:\MinGW\bin\..\lib\gcc\mingw32\3.4.5\..\..\..\..\mingw32\bin\ld.exe: cannot open output file T2ej5b.exe: Permission denied
+collect2: ld returned 1 exit status
+
+02:15:13 Build Failed. 1 errors, 0 warnings. (took 307ms)
+

@@ -1,0 +1,76 @@
+/*
+ ============================================================================
+ Name        : Tema7ej2.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "utn.h"
+
+int esAlfanumerico(char* cadena);
+int getAlfanumerico(char* cadena, int longitud);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char cadenaAlfanumerica[20];
+
+	printf("Ingrese alfanumerico: ");
+	gets(cadenaAlfanumerica);
+
+	if(esAlfanumerico(cadenaAlfanumerica) == 1)
+	{
+		printf("Es alfanumerico");
+	}
+	else
+	{
+		printf("No es alfanumerico");
+	}
+
+	return EXIT_SUCCESS;
+}
+
+int esAlfanumerico(char* cadena)
+{
+	int i;
+
+	if(cadena != NULL)
+	{
+		for(i = 0; i < strlen(cadena); i++)
+		{
+			if((cadena[i] != ' ') && (cadena[i] < 'a' || cadena[i] > 'z') && (cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] < '0' || cadena[i] > '9'))
+			{
+				return 0;
+			}
+		}
+	}
+
+	return 1;
+}
+
+int getAlfanumerico(char* cadena, int longitud)
+{
+	char bufferString[15];
+	int retorno = -1;
+
+	printf("Dame un alfanumerico: ");
+	gets(bufferString);
+
+	if((cadena != NULL) && (strlen(bufferString) <= longitud) && (esAlfanumerico(bufferString) == 1))
+	{
+		strcpy(cadena, bufferString);
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+

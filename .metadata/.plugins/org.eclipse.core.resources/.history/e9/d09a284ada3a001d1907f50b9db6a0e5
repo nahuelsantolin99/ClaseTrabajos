@@ -1,0 +1,58 @@
+/*
+ ============================================================================
+ Name        : nuevasfunciones.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+
+	return EXIT_SUCCESS;
+}
+
+int esFloat(char* cadena)
+{
+	int retorno;
+	int i;
+	int contadorPuntos = 0;
+
+	if(cadena != NULL)
+	{
+		for(i = 0; i < strlen(cadena); i++)
+		{
+			if(cadena[i] < '0' || cadena[i] > '9')
+			{
+				if(cadena[i] == '.')
+				{
+					contadorPuntos++;
+					if(contadorPuntos > 1)
+					{
+						retorno = 0;
+						break;
+					}
+				}
+				else
+				{
+					if(i == 0 && (cadena[i] != '+' || cadena[i] != '-'))
+					{
+						retorno = 0;
+						break;
+					}
+					else
+					{
+						retorno = 0;
+						break;
+					}
+				}
+			}
+		}
+	}
+	return retorno;
+}

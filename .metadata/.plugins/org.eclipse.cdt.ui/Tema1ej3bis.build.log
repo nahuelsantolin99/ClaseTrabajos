@@ -1,0 +1,8 @@
+20:43:55 **** Incremental Build of configuration Debug for project Tema1ej3bis ****
+Info: Internal Builder is used for build
+gcc -o Tema1ej3bis.exe "src\\Tema1ej3bis.o" 
+C:\MinGW\bin\..\lib\gcc\mingw32\3.4.5\..\..\..\..\mingw32\bin\ld.exe: cannot open output file Tema1ej3bis.exe: Permission denied
+collect2: ld returned 1 exit status
+
+20:43:55 Build Failed. 1 errors, 0 warnings. (took 149ms)
+

@@ -1,0 +1,7 @@
+20:43:43 **** Rebuild of configuration Debug for project Tema1ej3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Tema1ej3.o" "..\\src\\Tema1ej3.c" 
+gcc -o Tema1ej3.exe "src\\Tema1ej3.o" 
+
+20:43:44 Build Finished. 0 errors, 0 warnings. (took 328ms)
+

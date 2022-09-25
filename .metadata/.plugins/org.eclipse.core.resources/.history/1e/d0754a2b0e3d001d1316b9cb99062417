@@ -1,0 +1,166 @@
+/*
+ ============================================================================
+ Name        : Tema8ej.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "funMatrizABM"
+#include "utn.h"
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char codigo[3][5];
+	char modelo[3][11];
+	int cantidad[3];
+	float precio[3];
+	int flagCarga = 1;
+	int flagVenta = 1;
+	char opcion;
+
+	printf("Binevenido!\n");
+
+	do
+	{
+		if(utn_getCaracter(&opcion, "\nA-Carga de productos\nB-Venta de productos\nC-Modificación del precio\nD-Modificar el modelo\nE-Listar ordenado por código\nF-Listar datos de los productos con menos de 3 unidades\nG-Salir", "No es opcion valida", 'A', 'G', 2) == -1)
+		{
+			printf("Agoto los reintentos\n");
+		}
+
+		switch(opcion)
+		{
+			case 'A':
+					cargarProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Carga de productos exitosa\n");
+					flagCarga = 0;
+			break;
+			case 'B':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos antes de vender");
+				}
+				else
+				{
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					venderProductos(cantidad);
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					//printf("Venta exitosa\n");
+					flagVenta = 0;
+
+				}
+			break;
+			case 'C':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para modificar precio");
+				}
+				else
+				{
+					printf("Modificacion de precio exitosa\n");
+					flagCarga = 1;
+					flagVenta = 1;
+				}
+			break;
+			case 'D':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para modificar modelo");
+				}
+				else
+				{
+					printf("Modificacion de modelo exitosa\n");
+					flagCarga = 1;
+					flagVenta = 1;
+				}
+			break;
+			case 'E':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para ordenarlos por codigo");
+				}
+				else
+				{
+					printf("Listado ordenado por codigo exitoso\n");
+					flagCarga = 1;
+					flagVenta = 1;
+				}
+			break;
+			case 'F':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para listar los productos con menos de 3 unidades");
+				}
+				else
+				{
+					printf("Listado ultimo exitoso\n");
+					flagCarga = 1;
+					flagVenta = 1;
+				}
+			break;
+			case 'G':
+				printf("Saliendo");
+			break;
+		}
+	}while(opcion != 'G');
+
+
+	return EXIT_SUCCESS;
+}
+
+int cargarProductos(char codigo[][5], char modelo[][11], int cantidadProductos[], float precio[], int cantidadCarga)
+{
+	int retorno = -1;
+	int i;
+	char bufferCodigo[5];
+	char bufferModelo[11];
+	int bufferProductos;
+	float bufferPrecios;
+
+	if(codigo != NULL && cantidadCarga > 0)
+	{
+		for(i = 0; i < cantidadCarga; i++)
+		{
+			do
+			{
+				//EL GETS ME VALIDA QUE NO SUPERE EL LIMITE DE ELEMENTOS
+				getsValidado("Ingrese alfanumerico: ", "Error. Reingrese alfanumerico", bufferCodigo, sizeof(bufferCodigo));
+			}while(esAlfanumerico(bufferCodigo) == 0);//VA A ITERAR SIEMPRE QUE NO SEA ALFANUMERICO
+
+			if(esAlfanumerico(bufferCodigo) == 1)
+			{
+				strcpy(codigo[i], bufferCodigo);
+			}
+
+			do
+			{
+				//EL GETS ME VALIDA QUE NO SUPERE EL LIMITE DE ELEMENTOS
+				getsValidado("Ingrese modelo: ", "Error. Reingrese modelo", bufferModelo, sizeof(bufferModelo));
+			}while(esSoloLetra(bufferModelo) == 0);//VA A ITERAR SIEMPRE QUE NO SEA SOLO LETRAS
+
+			if(esSoloLetra(bufferModelo) == 1)
+			{
+				strcpy(modelo[i], bufferModelo);
+			}
+
+			utn_getNumero(&bufferProductos, "Ingrese cantidad de productos: ", "Error", 0, 1000, 2);
+
+			cantidadProductos[i] = bufferProductos;
+
+			utn_getNumeroFlotante(&bufferPrecios, "Ingrese precio del producto: ", "Error", 0, 1000, 2);
+
+			precio[i] = bufferProductos;
+		}
+	}
+
+	return retorno;
+}
+
+

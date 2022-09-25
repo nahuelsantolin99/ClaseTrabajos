@@ -1,0 +1,30 @@
+21:20:39 **** Incremental Build of configuration Debug for project clase1youtube ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\clase1youtube.o" "..\\src\\clase1youtube.c" 
+..\src\clase1youtube.c:16: error: syntax error before "setbuf"
+..\src\clase1youtube.c:16: warning: type defaults to `int' in declaration of `setbuf'
+..\src\clase1youtube.c:16: error: conflicting types for 'setbuf'
+C:/MinGW/bin/../lib/gcc/mingw32/3.4.5/../../../../include/stdio.h:193: error: previous declaration of 'setbuf' was here
+..\src\clase1youtube.c:16: error: conflicting types for 'setbuf'
+C:/MinGW/bin/../lib/gcc/mingw32/3.4.5/../../../../include/stdio.h:193: error: previous declaration of 'setbuf' was here
+..\src\clase1youtube.c:16: error: syntax error before "void"
+..\src\clase1youtube.c:21: error: syntax error before string constant
+..\src\clase1youtube.c:21: warning: type defaults to `int' in declaration of `printf'
+..\src\clase1youtube.c:21: error: conflicting types for 'printf'
+..\src\clase1youtube.c:21: note: a parameter list with an ellipsis can't match an empty parameter name list declaration
+..\src\clase1youtube.c:21: error: conflicting types for 'printf'
+..\src\clase1youtube.c:21: note: a parameter list with an ellipsis can't match an empty parameter name list declaration
+..\src\clase1youtube.c:21: warning: data definition has no type or storage class
+..\src\clase1youtube.c:22: error: syntax error before string constant
+..\src\clase1youtube.c:22: warning: type defaults to `int' in declaration of `scanf'
+..\src\clase1youtube.c:22: error: conflicting types for 'scanf'
+..\src\clase1youtube.c:22: note: a parameter list with an ellipsis can't match an empty parameter name list declaration
+..\src\clase1youtube.c:22: error: conflicting types for 'scanf'
+..\src\clase1youtube.c:22: note: a parameter list with an ellipsis can't match an empty parameter name list declaration
+..\src\clase1youtube.c:22: warning: data definition has no type or storage class
+..\src\clase1youtube.c:24: error: syntax error before string constant
+..\src\clase1youtube.c:24: warning: type defaults to `int' in declaration of `printf'
+..\src\clase1youtube.c:24: warning: data definition has no type or storage class
+
+21:20:39 Build Failed. 13 errors, 7 warnings. (took 93ms)
+

@@ -1,0 +1,73 @@
+/*
+ ============================================================================
+ Name        : Tema7ej2.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "utn.h"
+
+int esAlfanumerico(char* cadena);
+int getAlfanumerico(char* cadena, int longitud);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char cadenaAlfanumerica[20];
+
+	getAlfanumerico(cadenaAlfanumerica, sizeof(cadenaAlfanumerica));
+
+	printf("El alfanumerico es %s", cadenaAlfanumerica);
+
+	return EXIT_SUCCESS;
+}
+
+int esAlfanumerico(char* cadena)
+{
+	int i;
+
+	if(cadena != NULL)
+	{
+		for(i = 0; i < strlen(cadena); i++)
+		{
+			if((cadena[i] != ' ') && (cadena[i] < 'a' || cadena[i] > 'z') && (cadena[i] < 'A' || cadena[i] > 'Z') && (cadena[i] < '0' || cadena[i] > '9'))
+			{
+				return 0;
+			}
+		}
+	}
+
+	return 1;
+}
+
+int getAlfanumerico(char* cadena, int longitud)
+{
+	char bufferString[15];
+	int retorno;
+
+	printf("Dame un alfanumerico: ");
+	gets(bufferString);
+
+	if((cadena != NULL) && (strlen(bufferString) < longitud) && (esAlfanumerico(bufferString) == 1))
+	{
+		strcpy(cadena, bufferString);
+		retorno = 0;
+	}
+	else
+	{
+		printf("No se pudo conseguir alfanumerico");
+		retorno = -1;
+	}
+
+	return retorno;
+}
+
+

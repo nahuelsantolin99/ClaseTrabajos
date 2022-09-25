@@ -1,0 +1,9 @@
+22:28:32 **** Incremental Build of configuration Debug for project fbgfsb ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\fbgfsb.o" "..\\src\\fbgfsb.c" 
+gcc -o fbgfsb.exe "src\\fbgfsb.o" 
+C:\MinGW\bin\..\lib\gcc\mingw32\3.4.5\..\..\..\..\mingw32\bin\ld.exe: cannot open output file fbgfsb.exe: Permission denied
+collect2: ld returned 1 exit status
+
+22:28:32 Build Failed. 1 errors, 0 warnings. (took 323ms)
+

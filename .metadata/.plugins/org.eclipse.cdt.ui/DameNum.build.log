@@ -1,0 +1,8 @@
+21:39:31 **** Rebuild of configuration Debug for project DameNum ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\DameNum.o" "..\\src\\DameNum.c" 
+..\src\DameNum.c: In function `pedirNumero':
+..\src\DameNum.c:43: error: invalid operands to binary *
+
+21:39:32 Build Failed. 1 errors, 0 warnings. (took 98ms)
+

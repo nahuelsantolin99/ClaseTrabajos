@@ -1,0 +1,7 @@
+21:04:34 **** Incremental Build of configuration Debug for project FSAV ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\FSAV.o" "..\\src\\FSAV.c" 
+gcc -o FSAV.exe "src\\FSAV.o" 
+
+21:04:35 Build Finished. 0 errors, 0 warnings. (took 259ms)
+

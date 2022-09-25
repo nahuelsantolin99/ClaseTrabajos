@@ -1,0 +1,8 @@
+22:50:17 **** Incremental Build of configuration Debug for project ejguia22bis ****
+Info: Internal Builder is used for build
+gcc -o ejguia22bis.exe "src\\ejguia22bis.o" 
+C:\MinGW\bin\..\lib\gcc\mingw32\3.4.5\..\..\..\..\mingw32\bin\ld.exe: cannot open output file ejguia22bis.exe: Permission denied
+collect2: ld returned 1 exit status
+
+22:50:18 Build Failed. 1 errors, 0 warnings. (took 162ms)
+

@@ -1,0 +1,207 @@
+/*
+ ============================================================================
+ Name        : Tema8ej.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "funMatrizABM.h"
+#include "utn.h"
+
+//int ordenarPorCodigo(char codigo[][5], char modelo[][11], int cantidad[], float precio[], int cantidadProductos);
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char codigo[3][5];
+	char modelo[3][11];
+	int cantidad[3];
+	float precio[3];
+	int flagCarga = 1;
+	int i;
+	int j;
+	char auxCodigo[5];
+	char auxModelo[11];
+	int auxCantidad;
+	float auxPrecio;
+	char opcion;
+
+	printf("Binevenido!\n");
+
+	do
+	{
+		if(utn_getCaracter(&opcion, "\nA-Carga de productos\nB-Venta de productos\nC-Modificación del precio\nD-Modificar el modelo\nE-Listar ordenado por código\nF-Listar datos de los productos con menos de 3 unidades\nG-Salir", "No es opcion valida", 'A', 'G', 2) == -1)
+		{
+			printf("Agoto los reintentos\n");
+		}
+
+		switch(opcion)
+		{
+			case 'A':
+					cargarProductos(codigo, modelo, cantidad, precio, 3);
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Carga de productos exitosa\n");
+					flagCarga = 0;
+			break;
+			case 'B':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos antes de vender");
+				}
+				else
+				{
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					venderProductos(cantidad);
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Venta exitosa\n");
+
+				}
+			break;
+			case 'C':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para modificar precio");
+				}
+				else
+				{
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					modificarPrecio(precio);
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Modificacion de precio exitosa\n");
+				}
+			break;
+			case 'D':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para modificar modelo");
+				}
+				else
+				{
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					modificarModelo(modelo);
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Modificacion de modelo exitosa\n");
+				}
+			break;
+			case 'E':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para ordenarlos por codigo");
+				}
+				else
+				{
+					for(i = 0; i < 3 - 1; i++)
+					{
+						for(j = j+1; j < 3; i++)
+						{
+							if(strcmp(codigo[i], codigo[j]) > 0)
+							{
+								strcpy(auxCodigo, codigo[i]);
+								strcpy(codigo[i], codigo[j]);
+								strcpy(codigo[j], auxCodigo);
+
+								strcpy(auxModelo, modelo[i]);
+								strcpy(modelo[i], modelo[j]);
+								strcpy(modelo[j], auxModelo);
+
+								auxCantidad = cantidad[i];
+								cantidad[i] = cantidad[j];
+								cantidad[j] = auxCantidad;
+
+								auxPrecio = precio[i];
+								precio[i] = precio[j];
+								precio[j] = auxPrecio;
+							}
+						}
+					}
+
+					printf("\nINDEX    CODIGO    MODELO    CANTIDAD    PRECIO\n");
+
+					for(i = 0; i < 3; i++)
+					{
+						printf("%d       %s        %s        %d         %.2f  \n", i + 1, codigo[i], modelo[i], cantidad[i], precio[i]);
+					}
+
+
+
+					/*if(ordenarPorCodigo(codigo, modelo, cantidad, precio, 3) == 0)
+					{
+						imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					}
+					*/
+					printf("Listado ordenado por codigo exitoso\n");
+				}
+			break;
+			case 'F':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para listar los productos con menos de 3 unidades");
+				}
+				else
+				{
+					printf("Listado ultimo exitoso\n");
+				}
+			break;
+			case 'G':
+				printf("Saliendo");
+			break;
+		}
+	}while(opcion != 'G');
+
+	return EXIT_SUCCESS;
+}
+
+/*
+int ordenarPorCodigo(char codigo[][5], char modelo[][11], int cantidad[], float precio[], int cantidadProductos)
+{
+	int retorno = -1;
+	int i;
+	int j;
+	char auxCodigo[5];
+	char auxModelo[11];
+	int auxCantidad;
+	float auxPrecio;
+
+	if(codigo != NULL && modelo != NULL && cantidad != NULL && precio != NULL && cantidadProductos > 0)
+	{
+		for(i = 0; i < cantidadProductos - 1; i++)
+		{
+			for(j = j+1; j < cantidadProductos; i++)
+			{
+				if(strcmp(codigo[i], codigo[j]) > 0)
+				{
+					strcpy(auxCodigo, codigo[i]);
+					strcpy(codigo[i], codigo[j]);
+					strcpy(codigo[j], auxCodigo);
+
+					strcpy(auxModelo, modelo[i]);
+					strcpy(modelo[i], modelo[j]);
+					strcpy(modelo[j], auxModelo);
+
+					auxCantidad = cantidad[i];
+					cantidad[i] = cantidad[j];
+					cantidad[j] = auxCantidad;
+
+					auxPrecio = precio[i];
+					precio[i] = precio[j];
+					precio[j] = auxPrecio;
+				}
+			}
+		}
+
+		retorno = 0;
+	}
+
+	return retorno;
+}
+*/
+
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Matriz/src/arrayParalelo.c&apos; to &apos;Matriz.c&apos;" description="Rename resource &apos;arrayParalelo.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/arrayParalelo.c" name="Matriz.c" stamp="1663989858217" updateReferences="true"/>
+</session>

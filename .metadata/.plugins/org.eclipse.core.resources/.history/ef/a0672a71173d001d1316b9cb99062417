@@ -1,0 +1,116 @@
+/*
+ ============================================================================
+ Name        : Tema8ej.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include "funMatrizABM.h"
+#include "utn.h"
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char codigo[3][5];
+	char modelo[3][11];
+	int cantidad[3];
+	float precio[3];
+	int flagCarga = 1;
+	char opcion;
+
+	printf("Binevenido!\n");
+
+	do
+	{
+		if(utn_getCaracter(&opcion, "\nA-Carga de productos\nB-Venta de productos\nC-Modificación del precio\nD-Modificar el modelo\nE-Listar ordenado por código\nF-Listar datos de los productos con menos de 3 unidades\nG-Salir", "No es opcion valida", 'A', 'G', 2) == -1)
+		{
+			printf("Agoto los reintentos\n");
+		}
+
+		switch(opcion)
+		{
+			case 'A':
+					cargarProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Carga de productos exitosa\n");
+					flagCarga = 0;
+			break;
+			case 'B':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos antes de vender");
+				}
+				else
+				{
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					venderProductos(cantidad);
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Venta exitosa\n");
+
+				}
+			break;
+			case 'C':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para modificar precio");
+				}
+				else
+				{
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					modificarPrecio(precio);
+					imprimirProductos(codigo, modelo, cantidad, precio, 3);
+					printf("Modificacion de precio exitosa\n");
+					flagCarga = 1;
+				}
+			break;
+			case 'D':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para modificar modelo");
+				}
+				else
+				{
+					printf("Modificacion de modelo exitosa\n");
+					flagCarga = 1;
+				}
+			break;
+			case 'E':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para ordenarlos por codigo");
+				}
+				else
+				{
+					printf("Listado ordenado por codigo exitoso\n");
+					flagCarga = 1;
+				}
+			break;
+			case 'F':
+				if(flagCarga == 1)
+				{
+					printf("Debe cargar productos para listar los productos con menos de 3 unidades");
+				}
+				else
+				{
+					printf("Listado ultimo exitoso\n");
+					flagCarga = 1;
+				}
+			break;
+			case 'G':
+				printf("Saliendo");
+			break;
+		}
+	}while(opcion != 'G');
+
+
+	return EXIT_SUCCESS;
+}
+
+
+

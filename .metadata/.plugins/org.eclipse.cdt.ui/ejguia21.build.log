@@ -1,0 +1,7 @@
+08:42:41 **** Rebuild of configuration Debug for project ejguia21 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ejguia21.o" "..\\src\\ejguia21.c" 
+gcc -o ejguia21.exe "src\\ejguia21.o" 
+
+08:42:42 Build Finished. 0 errors, 0 warnings. (took 334ms)
+

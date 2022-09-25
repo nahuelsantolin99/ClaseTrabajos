@@ -1,0 +1,35 @@
+/*
+ ============================================================================
+ Name        : arrayParalelo.c
+ Author      : Nahuel Santolin
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "utn.h"
+
+int main(void)
+{
+	setbuf(stdout,NULL);
+
+	char nombres[2][10];
+	int i;
+
+	for(i = 0; i < 2; i++)
+	{
+		printf("Ingrese su nombre: ");
+		myGets(nombres, 10);
+	}
+
+	for(i = 0; i < 2; i++)
+	{
+		printf("Su nombre es %s", nombres);
+	}
+
+	return EXIT_SUCCESS;
+}
